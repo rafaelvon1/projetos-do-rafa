@@ -70,8 +70,8 @@ class Lapis{
     echo $ponta->get_ponta(),"<br>";
     echo $cor->get_cor(),"<br>";
     var_dump($cor);
-    echo $cor->cor;
-
+    echo $cor->cor; 
+    
 
     
 
