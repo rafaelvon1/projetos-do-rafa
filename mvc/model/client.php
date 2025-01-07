@@ -1,6 +1,6 @@
 <?php
 
-require_once('../config/connct.php');
+require_once('./config/connect.php');
 class ClientModel extends Connect{
     private $table;
 
@@ -8,11 +8,13 @@ class ClientModel extends Connect{
     {
         /*falo q dentro da minha classe connect iniciar o construct */
         parent::__construct();
-        $this->table = 'clients';
+        $this->table ='clients';
     }
     function getAll()
     {
-        
+        $sqlSelect = $this->connection->query("SELECT * from $this->table");
+        $resultQuery = $sqlSelect->fetchAll();
+        return $resultQuery;
     }
 }
 ?>
