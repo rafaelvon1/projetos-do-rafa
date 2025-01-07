@@ -5,16 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>home</title>
 </head>
+<style>
+body {
+    display: flex;             /* Ativa o Flexbox */
+    justify-content: center;   /* Centraliza horizontalmente */
+    align-items: center;       /* Centraliza verticalmente */
+    margin: 0;                 /* Remove margens padrão */
+    
+}
+</style>
 <body>
-    <h1>client lista</h1>
     <div class="content">
+        <h1>client lista</h1>
         <table class="table">
             <thead>
                 <tr>
                     <th>id</th>
                     <th>nome</th>
-                    <th>email</th>
-                    <th>telefone</th>
+                    <th>perfil</th>    
                 </tr>
             </thead>
             <tbody>
@@ -25,12 +33,6 @@
                     </th>
                     <th>
                         <?= $line['name'] ?>
-                    </th>
-                    <th>
-                        <?= $line['email'] ?>
-                    </th>
-                    <th>
-                        <?= $line['phone'] ?>
                     </th>
                     <th>
                         <a class='btn btn-primary btn-sm' href="index.php?id=<?=$line['id']?>&action=perfil"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-book" viewBox="0 0 16 16">

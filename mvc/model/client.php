@@ -23,5 +23,8 @@ class ClientModel extends Connect{
         $resultQuery = $sqlSelect->fetchAll();
         return $resultQuery;
     }
+    function Update(){
+        
+    }
 }
 ?>

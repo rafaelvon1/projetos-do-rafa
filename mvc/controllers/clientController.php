@@ -18,6 +18,10 @@ class clientsController{
         $selectid= $this->model->getId();
         require_once('./views/perfil.php');
     }
+    function Alterar(){
+        $alterar= $this->model->Alterar();
+        require_once('./views/index.php');
+    }
 
 }
 ?>
