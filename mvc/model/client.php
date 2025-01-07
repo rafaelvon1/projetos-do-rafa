@@ -12,7 +12,14 @@ class ClientModel extends Connect{
     }
     function getAll()
     {
-        $sqlSelect = $this->connection->query("SELECT * from $this->table");
+        $sqlSelect = $this->connection->query("SELECT * from clients");
+        $resultQuery = $sqlSelect->fetchAll();
+        return $resultQuery;
+    }
+    function getid()
+    {
+        $id = $_GET['id'];
+        $sqlSelect = $this->connection->query("SELECT * from clients where id = $id");
         $resultQuery = $sqlSelect->fetchAll();
         return $resultQuery;
     }
