@@ -8,8 +8,8 @@ if (isset($_GET['action']) or isset($_GET['id'])) {
     }
     //jogar usuario para alterar
     elseif ($_GET['action'] == 'Delete') {
-        //$controller = new clientsController();
-        //$controller->();
+        $controller = new clientsController();
+        $controller->Delete();
     }
     //excluir perfil do usuario 
     elseif ($_GET['action'] == 'Update') {

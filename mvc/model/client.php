@@ -34,5 +34,11 @@ class ClientModel extends Connect{
         $resultQuery = $sqlSelect->fetchAll();
         return $resultQuery;
     }
+    function Delete(){
+        $id = $_GET['id'];
+        $sqlSelect = $this->connection->query("DELETE from clients where id = '$id';");
+        $resultQuery = $sqlSelect->fetchAll();
+        return $resultQuery;
+    }
 }
 ?>

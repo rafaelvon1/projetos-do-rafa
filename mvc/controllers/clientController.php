@@ -33,6 +33,10 @@ class clientsController{
         $inserir = $this->model->Inserir($name,$email,$phone);
         header('location:./index.php');
     }
+    function Delete(){
+        $delete= $this->model->Delete();
+        header('location:./index.php');
+    }
 
 }
 ?>
