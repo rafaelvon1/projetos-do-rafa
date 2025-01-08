@@ -2,7 +2,6 @@
 require_once('./model/client.php');
 
 class clientsController{
-
     private $model;
     function __construct()
     {
@@ -13,14 +12,26 @@ class clientsController{
         $selectAll= $this->model->getAll();
         require_once('./views/index.php');
     }
-    function Perfil()
+    function Profile()
     {      
+        $selectid= $this->model->getId();
+        if ($_GET['action'] == 'viewProfile') {
+            require_once('./views/perfil.php');
+        }
+        else {
+            require_once('./views/alterar.php');
+        }
+        
+        
+    }
+    function Update($name,$email,$phone){
+        $change= $this->model->Change($name,$email,$phone);
         $selectid= $this->model->getId();
         require_once('./views/perfil.php');
     }
-    function Alterar(){
-        $alterar= $this->model->Alterar();
-        require_once('./views/index.php');
+    function Inserir($name,$email,$phone){
+        $inserir = $this->model->Inserir($name,$email,$phone);
+        header('location:./index.php');
     }
 
 }
