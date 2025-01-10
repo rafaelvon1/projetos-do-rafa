@@ -11,10 +11,8 @@ class Chamado{
         $selectAll = $this->model->getAll();
         require_once('./views/index.php');
     }
-    function Dados($mensagem){
-        $this->mensagem = $mensagem;
-        $this->mensagem = trim($this->mensagem);
-
+    function Filtro($mensagem){
+        $this->mensagem = trim($mensagem);
         if (empty($this->mensagem )) {
             //nao existe nada escrito
             return 0;
