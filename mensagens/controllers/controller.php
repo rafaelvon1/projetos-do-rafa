@@ -2,6 +2,7 @@
 require_once('./model/model.php');
 class Chamado{
     private $model;
+    public $mensagem;
     function __construct()
     {
         $this->model = new Model;
@@ -10,8 +11,22 @@ class Chamado{
         $selectAll = $this->model->getAll();
         require_once('./views/index.php');
     }
-    function Inserir($mensagem){
-        $inserindo = $this->model->Inserir($mensagem);
+    function Dados($mensagem){
+        $this->mensagem = $mensagem;
+        $this->mensagem = trim($this->mensagem);
+
+        if (empty($this->mensagem )) {
+            //nao existe nada escrito
+            return 0;
+        }
+        else {
+            //tem caracter
+            return 1;
+        }
+        
+    }
+    function Inserir(){
+        $inserindo = $this->model->Inserir($this ->mensagem);
         header('location: ./index.php');
     }
     
