@@ -9,7 +9,7 @@
     <form action="index.php?action=inserir" method="post">
         <label for="mensagem">Escreva sua mensagem:</label>
         <br>
-        <textarea id="mensagem" name="mensagem" rows="5" cols="40" placeholder="Digite seu texto aqui..."></textarea>
+        <textarea id="mensagem" name="mensagem" rows="5" cols="40" placeholder="Digite seu texto aqui..." required ></textarea>
         <br>
         <button>enviar</button>
     </form>
