@@ -4,7 +4,13 @@ include('./controllers/controller.php');
 $controller = new Chamado();
 if (isset($_GET['action']) == 'inserir') {
     $mensagem = $_POST['mensagem'];
-    $controller->Inserir($mensagem);
+    if ($controller->Filtro($mensagem) == 0) {
+        header('location: ./index.php');
+    }
+    else {
+        $controller->Inserir();
+    }
+    
     
 }
 else {
